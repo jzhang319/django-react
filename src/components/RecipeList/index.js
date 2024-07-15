@@ -8,7 +8,7 @@ function RecipeList() {
 
   useEffect(() => {
     axios
-      .get("http://44.211.175.183:8000:8000")
+      .get("http://44.211.175.183:8000")
       .then((res) => {
         setData(res.data);
         console.log(res.data);

@@ -11,7 +11,7 @@ const AddRecipeForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://44.211.175.183:8000:8000", {
+      const response = await axios.post("http://44.211.175.183:8000", {
         title,
         description,
       });

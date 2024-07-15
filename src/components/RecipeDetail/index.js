@@ -11,7 +11,7 @@ function RecipeDetail() {
   useEffect(() => {
     console.log(`Fetching recipe with id: ${id}`);
     axios
-      .get(`http://44.211.175.183:8000:8000/recipe/${id}/`)
+      .get(`http://44.211.175.183:8000/recipe/${id}/`)
       .then((response) => {
         console.log("API response:", response.data);
         setRecipe(response.data);
@@ -33,7 +33,7 @@ function RecipeDetail() {
 
   const handleDelete = () => {
     axios
-      .delete(`http://44.211.175.183:8000:8000/recipe/${id}/`)
+      .delete(`http://44.211.175.183:8000/recipe/${id}/`)
       .then(() => {
         console.log("Recipe deleted successfully");
         navigate("/"); // Redirect to home or another page
