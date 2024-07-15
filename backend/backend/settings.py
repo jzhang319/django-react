@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-zilwds$dh!z(^dip!aai5@3340_*8zkxkoe^dh2s3u$5li+mak
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -57,6 +57,14 @@ MIDDLEWARE = [
 REST_FRAMEWORK = {'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.AllowAny']}
 
 CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'PATCH',
+    'DELETE',
+    'OPTIONS'
+]
 
 ROOT_URLCONF = 'backend.urls'
 

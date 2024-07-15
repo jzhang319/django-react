@@ -26,6 +26,14 @@ class RecipeDetailView(APIView):
         serializer = RecipeSerializer(recipe)
         return Response(serializer.data)
 
+    def put(self, request, pk):
+        recipe = get_object_or_404(Recipe, pk=pk)
+        serializer = RecipeSerializer(recipe, data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
     def delete(self, request, pk):
         recipe = get_object_or_404(Recipe, pk=pk)
         recipe.delete()
