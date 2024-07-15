@@ -45,7 +45,7 @@ function RecipeDetail() {
 
   const handleEdit = () => {
     navigate(`/recipe/${id}/edit`);
-  }
+  };
 
   return (
     <>
@@ -53,12 +53,14 @@ function RecipeDetail() {
         <h2>Title: {recipe.title}</h2>
         <p>Description: {recipe.description}</p>
       </div>
-      <button className="delete-button" onClick={handleDelete}>
-        Delete Recipe
-      </button>
-      <button className="edit-button" onClick={handleEdit}>
-        Edit Recipe
-      </button>
+      <div className="button-container">
+        <button className="edit-button" onClick={handleEdit}>
+          Edit Recipe
+        </button>
+        <button className="delete-button" onClick={handleDelete}>
+          Delete Recipe
+        </button>
+      </div>
     </>
   );
 }

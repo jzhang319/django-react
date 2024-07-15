@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
 
 function EditRecipeForm() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [recipe, setRecipe] = useState({ title: '', description: '' });
+  const [recipe, setRecipe] = useState({ title: "", description: "" });
 
   useEffect(() => {
     axios
@@ -20,9 +20,9 @@ function EditRecipeForm() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setRecipe(prevState => ({
+    setRecipe((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -40,25 +40,31 @@ function EditRecipeForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>Title:</label>
+    <form onSubmit={handleSubmit} className="recipe-form">
+      <div className="title-container">
+        <label htmlFor="title">Title:</label>
         <input
           type="text"
+          id="title"
           name="title"
           value={recipe.title}
           onChange={handleChange}
+          className="title-input"
         />
       </div>
-      <div>
-        <label>Description:</label>
+      <div className="form-group">
+        <label htmlFor="description">Description:</label>
         <textarea
+          id="description"
           name="description"
           value={recipe.description}
           onChange={handleChange}
+          className="form-control"
         />
       </div>
-      <button type="submit">Save</button>
+      <button type="submit" className="btn btn-primary">
+        Save
+      </button>
     </form>
   );
 }
