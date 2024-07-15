@@ -20,7 +20,7 @@ function RecipeList() {
 
   return (
     <>
-      <NavLink to="/new-recipe" className="navbar new-recipe-button">
+      <NavLink to="/new-recipe" className="new-recipe-button">
         Add New Recipe
       </NavLink>
       {data &&

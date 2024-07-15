@@ -43,6 +43,10 @@ function RecipeDetail() {
       });
   };
 
+  const handleEdit = () => {
+    navigate(`/recipe/${id}/edit`);
+  }
+
   return (
     <>
       <div className="recipe-detail">
@@ -51,6 +55,9 @@ function RecipeDetail() {
       </div>
       <button className="delete-button" onClick={handleDelete}>
         Delete Recipe
+      </button>
+      <button className="edit-button" onClick={handleEdit}>
+        Edit Recipe
       </button>
     </>
   );

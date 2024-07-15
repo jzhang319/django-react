@@ -5,6 +5,7 @@ import RecipeDetail from "./components/RecipeDetail";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import AddRecipeForm from "./components/AddRecipeForm";
+import EditRecipeForm from "./components/EditRecipeForm";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<RecipeList />} />
         <Route path="/recipe/:id" element={<RecipeDetail />} />
         <Route path="/new-recipe" element={<AddRecipeForm />} />
+        <Route path="/recipe/:id/edit" element={<EditRecipeForm />} />
       </Routes>
       <Footer />
     </Router>
